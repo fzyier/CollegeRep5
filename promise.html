@@ -44,17 +44,14 @@
   <p><a href="index.html">На головну</a></p>
   
   <script>
-    // Функція wait(ms) повертає проміс, який вирішується через ms мілісекунд
     function wait(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    // Обробка події кліку по кнопці
     document.getElementById('startPromise').addEventListener('click', () => {
       const messageEl = document.getElementById('promiseMessage');
       messageEl.textContent = "Очікування...";
 
-      // Викликаємо wait(5000) та використовуємо .then() для відображення повідомлення
       wait(5000).then(() => {
         messageEl.textContent = "Час вийшов!";
         console.log("Час вийшов!");
